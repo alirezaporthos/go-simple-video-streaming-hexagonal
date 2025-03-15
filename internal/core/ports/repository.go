@@ -7,5 +7,5 @@ import (
 
 type VideoRepository interface {
 	FindVideo(ctx context.Context, fileName string) (*domain.Video, error)
-	ReadVideoChunk(ctx context.Context, fileName string, start, end int64) ([]byte, error)
+	ReadVideoChunk(ctx context.Context, video *domain.Video, start, end int64) ([]byte, error)
 }
